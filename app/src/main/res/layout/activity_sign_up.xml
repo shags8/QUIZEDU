@@ -94,14 +94,35 @@
         android:id="@+id/Signup"
         android:layout_width="291dp"
         android:layout_height="51dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="42dp"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="590dp"
         android:background="@drawable/signupbutton"
         android:text="Sign up"
         android:textColor="@color/white"
         />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/Signup">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account?"
+            android:textColor="#4D4D4D"
+            android:textSize="16sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log in"
+            android:textColor="#2892E7"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+
 
 
 </RelativeLayout>
