@@ -32,10 +32,11 @@
         android:layout_marginLeft="41dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="250dp"
-        android:text="University roll no"
+        android:text="Email"
         android:textColor="#4D4D4D"
         android:textSize="16sp"/>
     <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="41dp"
@@ -57,6 +58,7 @@
         android:textColor="#4D4D4D"
         android:textSize="16sp"/>
     <EditText
+        android:id="@+id/passcode"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Enter Here"
@@ -102,6 +104,7 @@
             android:textColor="#4D4D4D"
             android:textSize="16sp"/>
         <TextView
+            android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign up"
