@@ -12,6 +12,14 @@
         android:theme="@style/Theme.QUIZ"
         tools:targetApi="31">
         <activity
+            android:name=".Question"
+            android:exported="false" />
+        <activity
+            android:name=".Code2"
+            android:exported="false"
+            android:label="@string/title_activity_code2"
+            android:theme="@style/Theme.QUIZ" />
+        <activity
             android:name=".CODE"
             android:exported="false" />
         <activity
