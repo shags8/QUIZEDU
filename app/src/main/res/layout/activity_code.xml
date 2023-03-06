@@ -15,6 +15,7 @@
         app:srcCompat="@drawable/quizedu2" />
 
     <EditText
+        android:id="@+id/code"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginRight="50dp"

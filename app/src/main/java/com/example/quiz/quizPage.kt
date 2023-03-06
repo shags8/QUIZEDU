@@ -23,8 +23,16 @@ class quizPage : AppCompatActivity() {
         val binding = ActivityQuizPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var code = intent.getStringExtra("CODE").toString()
+        var path = buildString {
+            append("Code/")
+            append(code)
+            append("/Questions")
+    }
+        Log.d("MAIN", "$path")
+
         quizquestion = arrayListOf()
-        database2 = FirebaseDatabase.getInstance().getReference("Code/123/Questions")
+        database2 = FirebaseDatabase.getInstance().getReference(path)
         database2.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
