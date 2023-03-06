@@ -16,41 +16,40 @@ class quizPage : AppCompatActivity() {
 
     private lateinit var database : DatabaseReference
     private lateinit var database2 : DatabaseReference
-    private lateinit var quizquestion : ArrayList<data>
+    lateinit var quizquestion : ArrayList<data>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityQuizPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         quizquestion = arrayListOf()
-        getdata()
-        Log.d("MAIN", "${quizquestion.size}")
-       // binding.question.text = quizquestion[0].question
-
-
-    }
-
-    private fun getdata() {
-        database = FirebaseDatabase.getInstance().getReference("Code/123/Questions")
-        //var data2 = data("ok","ok","ok","what??","ok2")
-       // database.child("Question2").setValue(data2).addOnSuccessListener {
-       //     Toast.makeText(this@quizPage,"Success",Toast.LENGTH_SHORT)
-       // }
         database2 = FirebaseDatabase.getInstance().getReference("Code/123/Questions")
         database2.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-             //   val stringValue = snapshot.getValue(String::class.java)
-             //   Log.d("MAIN", "$stringValue")
-                if (snapshot.exists()) {
-                    for (dataSnapshot in snapshot.children) {
-                        val data = dataSnapshot.getValue(data::class.java)
-                        if (data != null) {
-                            quizquestion?.add(data)
-                        }
+                if (snapshot.exists()){
 
+                    for (snapshot in snapshot.children){
+                        val datasc = snapshot.getValue(data::class.java)
+                        if (datasc != null) {
+                            quizquestion.add(datasc)
+                            Log.d("MAIN", "$datasc")
+                        }
                     }
+                    Log.d("MAIN", "${quizquestion.size}")
+                    binding.question.text = quizquestion[0].question
                 }
+
+
+                /*        if (snapshot.exists()) {
+                            for (dataSnapshot in snapshot.children) {
+                                val data = dataSnapshot.getValue(data::class.java)
+                                if (data != null) {
+                                    quizquestion?.add(data)
+                                }
+
+                            }
+                        }*/
 
             }
             override fun onCancelled(error: DatabaseError) {
@@ -58,5 +57,17 @@ class quizPage : AppCompatActivity() {
             }
 
         })
+
+
+
+    }
+
+     fun getdata() {
+        database = FirebaseDatabase.getInstance().getReference("Code/123/Questions")
+        //var data2 = data("ok","ok","ok","what??","ok2")
+       // database.child("Question2").setValue(data2).addOnSuccessListener {
+       //     Toast.makeText(this@quizPage,"Success",Toast.LENGTH_SHORT)
+       // }
+
     }
 }
