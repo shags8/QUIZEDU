@@ -30,7 +30,7 @@ class Login : AppCompatActivity() {
 
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(email,passcode).addOnCompleteListener {
                     if (it.isSuccessful){
-                        val intent = Intent(this,CODE::class.java)
+                        val intent = Intent(this,quizPage::class.java)
                         startActivity(intent)
                         finish()
                     }
