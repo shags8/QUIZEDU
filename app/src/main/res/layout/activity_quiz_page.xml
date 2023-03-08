@@ -52,4 +52,62 @@
         android:textStyle="bold"
         />
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp">
+
+        <RadioButton
+            android:id="@+id/option_1"
+            android:hint="Option1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <RadioButton
+            android:id="@+id/option_2"
+            android:hint="Option2"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <RadioButton
+            android:id="@+id/option_3"
+            android:hint="Option3"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <RadioButton
+            android:id="@+id/option_4"
+            android:hint="Option4"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RadioGroup>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/signupbutton"
+        android:text="Submit"
+        android:layout_marginTop="513dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        android:textColor="@color/white"
+        />
+
 </RelativeLayout>
